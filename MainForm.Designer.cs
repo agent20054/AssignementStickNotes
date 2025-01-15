@@ -40,7 +40,10 @@ namespace AssignementStickNotes
             this.TrayIconStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.currentAssignments = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.currentAssignmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TrayIconStrip.SuspendLayout();
+            this.currentAssignments.SuspendLayout();
             this.SuspendLayout();
             // 
             // Title
@@ -114,6 +117,7 @@ namespace AssignementStickNotes
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
+            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
             // 
             // TrayIconStrip
             // 
@@ -121,21 +125,36 @@ namespace AssignementStickNotes
             this.openToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.TrayIconStrip.Name = "TrayIconStrip";
-            this.TrayIconStrip.Size = new System.Drawing.Size(181, 70);
+            this.TrayIconStrip.Size = new System.Drawing.Size(104, 48);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            // 
+            // currentAssignments
+            // 
+            this.currentAssignments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.currentAssignmentsToolStripMenuItem});
+            this.currentAssignments.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.currentAssignments.Name = "contextMenuStrip1";
+            this.currentAssignments.Size = new System.Drawing.Size(186, 48);
+            this.currentAssignments.Text = "test";
+            // 
+            // currentAssignmentsToolStripMenuItem
+            // 
+            this.currentAssignmentsToolStripMenuItem.Name = "currentAssignmentsToolStripMenuItem";
+            this.currentAssignmentsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.currentAssignmentsToolStripMenuItem.Text = "CurrentAssignments:";
             // 
             // MainForm
             // 
@@ -154,6 +173,7 @@ namespace AssignementStickNotes
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TrayIconStrip.ResumeLayout(false);
+            this.currentAssignments.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,6 +190,8 @@ namespace AssignementStickNotes
         private System.Windows.Forms.ContextMenuStrip TrayIconStrip;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip currentAssignments;
+        private System.Windows.Forms.ToolStripMenuItem currentAssignmentsToolStripMenuItem;
     }
 }
 
